@@ -1,6 +1,7 @@
 # Software-Architecture
-Final project of "Programming Methodology I", Informatic Engineering course.
-Different Software Architectures for POO applied in C# using SharpDevelop version 5.1.0, migrated to Visual Studio 2022
+Final project of "Programming Methodology I", Informatic Engineering course.  
+Different Software Architectures for POO applied in C# using SharpDevelop version 5.1.0, migrated to Visual Studio 2022  
+
 ### *Key Skills*
 * *Organization*
 * *Interface design*
@@ -14,11 +15,11 @@ Different Software Architectures for POO applied in C# using SharpDevelop versio
 * Maintain a weekly folder structure to ensure organization, clarity, and easy access to previous versions for tracking modifications.
 
 ## Project Organization
-**Week 1:** Experience with interface design and implementation
-**Week 2:** Strategy pattern ; Iterator pattern
-**Week 3:** Factory Method pattern ; Observer pattern
-**Week 4:** Adapter pattern ; Decorator pattern
-**Week 5:** Proxy pattern ; Command pattern
-**Week 6:** Composite pattern ; Template Method pattern
+**Week 1:** Experience with interface design and implementation  
+**Week 2:** Strategy pattern ; Iterator pattern  
+**Week 3:** Factory Method pattern ; Observer pattern  
+**Week 4:** Adapter pattern ; Decorator pattern  
+**Week 5:** Proxy pattern ; Command pattern  
+**Week 6:** Composite pattern ; Template Method pattern  
 **Week 7:** Chain of Responsability pattern ; Singletone pattern
 
