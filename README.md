@@ -4,6 +4,7 @@ Different Software Architectures for POO applied in C# using SharpDevelop versio
 
 ### *Key Skills*
 * *Organization*
+* *Clean Code*
 * *Interface design*
 * *Software Architecture design*
 * *Problem solving*
