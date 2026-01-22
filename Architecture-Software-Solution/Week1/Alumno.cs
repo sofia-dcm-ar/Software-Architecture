@@ -3,20 +3,21 @@
 namespace Week1
 {
     //Exercise 12: Implement the Alumno class, subclass of Person
+    //NOTE: "Alumno" stays in spanish for future Adapter pattern exercise
     public class Alumno : Person, IMyComparable
     {
-        private int _studentRecord;
+        private int _fileNumber;
         private double _average;
 
-        public Alumno(string name, int dni, int record, double average) : base(name, dni)
+        public Alumno(string name, int id, int fileNumber, double average) : base(name, id)
         {
-            _studentRecord=record;
+            _fileNumber=fileNumber;
             _average=average;
         }
 
-        public int GetStudentRecord()
+        public int GetFileNumber()
         {
-            return _studentRecord;
+            return _fileNumber;
         }
 
         public double GetAverage()
@@ -24,21 +25,21 @@ namespace Week1
             return _average;
         }
 
-        //Exercise 15: reimplement the IMyComparable methods used in Person so that they compare by _studentRecord or _average
+        //Exercise 15: reimplement the IMyComparable methods used in Person so that they compare by _fileNumber or _average
 
         public override bool IsEqual(IMyComparable other)
         {
-            return (_studentRecord==((Alumno)other)._studentRecord);
+            return (_fileNumber==((Alumno)other)._fileNumber);
         }
 
         public override bool IsLessThan(IMyComparable other)
         {
-            return (_studentRecord<((Alumno)other)._studentRecord);
+            return (_fileNumber<((Alumno)other)._fileNumber);
         }
 
         public override bool IsGreaterThan(IMyComparable other)
         {
-            return (_studentRecord>((Alumno)other)._studentRecord);
+            return (_fileNumber>((Alumno)other)._fileNumber);
         }
 
         //I teach it to print itself (thanks to problems when using the Report function in main, exercise 14)
@@ -47,7 +48,7 @@ namespace Week1
 
         public override string ToString()
         {
-            return base.ToString()+"\nStudent Record: "+_studentRecord.ToString()+"\nAverage: "+((float)_average).ToString("F2");
+            return base.ToString()+"\nStudent Record: "+_fileNumber.ToString()+"\nAverage: "+((float)_average).ToString("F2");
             //the F2 indicates that I only want two decimals
         }
     }

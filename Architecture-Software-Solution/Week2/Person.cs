@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Week1
+namespace Week2
 {
     //Exercise 11: Implement abstract class Person, implement the IMyComparable interface
     public abstract class Person : IMyComparable

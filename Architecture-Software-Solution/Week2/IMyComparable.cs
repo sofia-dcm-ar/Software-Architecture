@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Week1
+namespace Week2
 {
-    //Exercise 1: Implement the interface representing any object capable of comparing itself to another object of the 'same type'.
+    //(Week 1) Exercise 1: Implement the interface representing any object capable of comparing itself to another object of the 'same type'.
     //NOTE: It is assumed that the 'other' object received as a parameter is of the same type as the current object.
     public interface IMyComparable
     {

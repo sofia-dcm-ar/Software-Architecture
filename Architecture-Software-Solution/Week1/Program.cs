@@ -26,6 +26,7 @@ namespace Week1
             Console.ReadKey(true);
         }
 
+        //-------------------Functions---------------------
 
         //Exercise 5: Implement a fill function that receives a collection and adds 20 random comparables
         public static void Fill(IMyCollection collection)
@@ -63,10 +64,10 @@ namespace Week1
         public static void FillAlumnos (IMyCollection collection)
         {
             Random r = new Random();
-            string[] nombres = new string[] { "Johnny", "Simon", "John", "Kyle", "Alejandro", "Joel", "Arthur", "Leon", "Valeria", "Kate", "Farah", "Sarah", "Ada", "Helena", "Alice" };
+            string[] names = new string[] { "Johnny", "Simon", "John", "Kyle", "Alejandro", "Joel", "Arthur", "Leon", "Valeria", "Kate", "Farah", "Sarah", "Ada", "Helena", "Alice" };
             for (int i = 0; i<20; i++)
             {
-                IMyComparable student = new Alumno(nombres[r.Next(nombres.Length-1)], r.Next(10000000, 50000000), r.Next(10000, 70000), r.NextDouble());
+                IMyComparable student = new Alumno(names[r.Next(names.Length-1)], r.Next(10000000, 50000000), r.Next(10000, 70000), r.NextDouble());
                 collection.Add(student);
             }
         }
