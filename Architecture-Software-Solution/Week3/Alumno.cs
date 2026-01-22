@@ -1,11 +1,12 @@
 ﻿using System;
-using Week2.Strategy_Pattern;
+using Week3.Strategy_Pattern;
+using Week3.Observer_Pattern;
 
-namespace Week2
+namespace Week3
 {
     //(Week 1)Exercise 12: Implement the Alumno class, subclass of Person
     //NOTE: "Alumno" stays in spanish for future Adapter pattern exercise
-    public class Alumno : Person, IMyComparable
+    public class Alumno : Person, IObserver
     {
         private int _fileNumber;
         private double _average;
@@ -13,15 +14,15 @@ namespace Week2
 
         public Alumno(string name, int id, int fileNumber, double average) : base(name, id)
         {
-            _fileNumber=fileNumber;
-            _average=average;
-            _strategy= new IDComparison();//initialize with a default strategy
+            this._fileNumber=fileNumber;
+            this._average=average;
+            this._strategy= new IDComparison();//initialize with a default strategy
         }
 
         //(Week 2) Exercise 1: STRATEGY -> set the strategy
         public void SetStrategy (IComparisonStrategy newOne)
         {
-            _strategy=newOne;
+            this._strategy=newOne;
         }
 
         public int GetFileNumber()
@@ -58,6 +59,29 @@ namespace Week2
         public override bool IsGreaterThan(IMyComparable other)
         {
             return _strategy.IsGreaterThan(this, (Alumno)other);
+        }
+
+        //(Week 3) OBSERVER -> Exercise 11: Implement new methods
+        public void PayAttention()
+        {
+            Console.WriteLine("Paying Attention");
+        }
+
+        public void LoseFocus()
+        {
+            Random r = new Random();
+            string[] actions = { "Looking out the window", "Checking the phone", "Drawing in the margin of the folder", "Throwing paper airplanes" };
+            Console.WriteLine(actions[r.Next(2)]);
+        }
+
+        //(Week 3) OBSERVER -> Exercise 12: implement the Observer pattern, Alumno is an observer
+
+        public void Update(IObservable observable)
+        {
+            if (((Professor)observable).GetSpeaking())
+                this.PayAttention();
+            else
+                this.LoseFocus();
         }
     }
 }

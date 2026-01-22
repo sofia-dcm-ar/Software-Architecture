@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Week1
+namespace Week3
 {
     //Exercise 11: Implement abstract class Person, implement the IMyComparable interface
     public abstract class Person : IMyComparable
@@ -10,8 +10,8 @@ namespace Week1
 
         public Person(string name, int id)
         {
-            _name=name;
-            _id=id;
+            this._name=name;
+            this._id=id;
         }
 
         public string GetName()
@@ -27,23 +27,23 @@ namespace Week1
         //Interface methods implementation
         public virtual bool IsEqual(IMyComparable comparable)
         {
-            return _id==((Person)comparable)._id;
+            return (_id==((Person)comparable)._id);
         }
 
         public virtual bool IsLessThan(IMyComparable comparable)
         {
-            return _id<((Person)comparable)._id;
+            return (_id<((Person)comparable)._id);
         }
 
         public virtual bool IsGreaterThan(IMyComparable comparable)
         {
-            return _id>((Person)comparable)._id;
+            return (_id>((Person)comparable)._id);
         }
 
 
         public override string ToString()
         {
-            return "Name: "+_name+"\nID: "+_id.ToString();
+            return ("Name: "+_name+"\nID: "+_id.ToString());
 
         }
     }

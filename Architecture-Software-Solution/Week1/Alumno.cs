@@ -29,17 +29,17 @@ namespace Week1
 
         public override bool IsEqual(IMyComparable other)
         {
-            return (_fileNumber==((Alumno)other)._fileNumber);
+            return _fileNumber==((Alumno)other)._fileNumber;
         }
 
         public override bool IsLessThan(IMyComparable other)
         {
-            return (_fileNumber<((Alumno)other)._fileNumber);
+            return _fileNumber<((Alumno)other)._fileNumber;
         }
 
         public override bool IsGreaterThan(IMyComparable other)
         {
-            return (_fileNumber>((Alumno)other)._fileNumber);
+            return _fileNumber>((Alumno)other)._fileNumber;
         }
 
         //I teach it to print itself (thanks to problems when using the Report function in main, exercise 14)

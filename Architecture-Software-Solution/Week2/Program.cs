@@ -19,16 +19,16 @@ namespace Week2
 
             MyQueue queued = new MyQueue();
             FillAlumnos(queued);
-            Console.WriteLine("Comparison for Name\n");
+            PrintTitle("Comparison for Name");
             ChangeComparisonStrategy(queued, new NameComparison());
             Report(queued);
-            Console.WriteLine("\nComparison for File Number\n");
+            PrintTitle("Comparison for File Number");
             ChangeComparisonStrategy(queued, new FileNumberComparison());
             Report(queued);
-            Console.WriteLine("\nComparison for Average\n");
+            PrintTitle("Comparison for Average");
             ChangeComparisonStrategy(queued, new AverageComparison());
             Report(queued);
-            Console.WriteLine("Comparison for ID\n");
+            PrintTitle("Comparison for ID");
             ChangeComparisonStrategy(queued, new IDComparison());
             Report(queued);
 
@@ -37,13 +37,18 @@ namespace Week2
         }
 
         //-------------------Functions---------------------
+        public static void PrintTitle(string title)
+        {
+            Console.WriteLine("\n-----------------"+title+"-----------------\n");
+        }
 
         public static void Report(IMyCollection collection)
         {
+            Console.WriteLine("Number of Items: ");
             Console.WriteLine(collection.Count());
             Console.WriteLine("\nYounger Student\n"); //Flag for debugging
             Console.WriteLine(collection.Minimum().ToString()); //need to teach every IMyComparable child how to print themselves
-            Console.WriteLine("\nOrder Student\n");
+            Console.WriteLine("\nOlder Student\n");
             Console.WriteLine(collection.Maximum().ToString());
             Console.Write("Introduce information for search:");
             string search = Console.ReadLine();
@@ -53,7 +58,7 @@ namespace Week2
             if (collection.Contains(searched))
                 Console.WriteLine("The read element is in the collection");
             else
-                Console.WriteLine("The read element isn't in the collection");
+                Console.WriteLine("The read element is not in the collection");
         }
 
         //(Week 1) Exercise 13: Implement fillStudents function, receives an IMyCollection and adds 20 random students

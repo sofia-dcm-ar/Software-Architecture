@@ -57,7 +57,7 @@ namespace Week1
             if (collection.Contains(newOne))
                 Console.WriteLine("The read element is in the collection");
             else
-                Console.WriteLine("The read element isn't in the collection");
+                Console.WriteLine("The read element is not in the collection");
         }
 
 
