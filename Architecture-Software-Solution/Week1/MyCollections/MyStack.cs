@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Week1
+namespace Week1.MyCollections
 {
     //Exercise 4.A: Implement Stack class and implement IMyCollection interface
     public class MyStack : IMyCollection
@@ -55,7 +55,7 @@ namespace Week1
 
         public void Add(IMyComparable c)
         {
-            this.Push(c);
+            Push(c);
         }
 
         public bool Contains(IMyComparable c)

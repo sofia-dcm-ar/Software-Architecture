@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Week1
+namespace Week1.MyCollections
 {
     public class MyQueue : IMyCollection
     {
@@ -54,14 +54,14 @@ namespace Week1
 
         public void Add(IMyComparable comparable)
         {
-            this.Enqueue(comparable);
+            Enqueue(comparable);
         }
 
         public bool Contains(IMyComparable comparable)
         {
             foreach (IMyComparable actual in _queued)
             {
-                if ((actual).IsEqual(comparable)) 
+                if (actual.IsEqual(comparable)) 
                     return true;
             }
             return false;

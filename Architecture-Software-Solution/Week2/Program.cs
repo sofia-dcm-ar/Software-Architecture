@@ -1,4 +1,5 @@
 ﻿using System;
+using Week2.MyCollections;
 using Week2.Iterator_Pattern;
 using Week2.Strategy_Pattern;
 
@@ -12,8 +13,8 @@ namespace Week2
             //(Week 1) Exercise 9: modify main to include MultipleCollection
             //(Week 1) Exercise 14: modify main, now instead of filling, we fill the collections with students
 
-            //(Week 2) Exercise 7: modify main to use printElements
-            //(Week 2) Exercise 9: modify main to change comparison strategy of the elements
+            //(Week 2) ITERATOR -> Exercise 7: modify main to use printElements
+            //(Week 2) STRATEGY -> Exercise 9: modify main to change comparison strategy of the elements
 
 
             MyQueue queued = new MyQueue();
@@ -55,8 +56,8 @@ namespace Week2
                 Console.WriteLine("The read element isn't in the collection");
         }
 
-        //(Week 1)  //Exercise 13: Implement fillStudents function, receives an IMyCollection and adds 20 random students
-        //(Week 2) Exercise 2: Modify the fillStudents function so that it can set a comparison strategy
+        //(Week 1) Exercise 13: Implement fillStudents function, receives an IMyCollection and adds 20 random students
+        //(Week 2) STRATEGY -> Exercise 2: Modify the fillStudents function so that it can set a comparison strategy
         public static void FillAlumnos(IMyCollection collection)
         {
             Random r = new Random();
@@ -71,7 +72,7 @@ namespace Week2
             }
         }
 
-        //(Week 2) Exercise 6: Immplement a function that receives an IMyCollection and prints all its elements using its iterator
+        //(Week 2) ITERATOR -> Exercise 6: Immplement a function that receives an IMyCollection and prints all its elements using its iterator
         public static void PrintElements(IMyCollection collection)
         {
             IIterator concreteIterator = collection.CreateIterator();

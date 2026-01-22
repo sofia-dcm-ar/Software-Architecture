@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Week2.Iterator_Pattern;
 
-namespace Week2
+namespace Week2.MyCollections
 {
     //(Week 1) Exercise 4.B: Implement Queue class and with IMyCollection interface
     public class MyQueue : IMyCollection
@@ -56,21 +56,21 @@ namespace Week2
 
         public void Add(IMyComparable comparable)
         {
-            this.Enqueue(comparable);
+            Enqueue(comparable);
         }
 
         public bool Contains(IMyComparable comparable)
         {
             foreach (IMyComparable actual in _queued)
             {
-                if ((actual).IsEqual(comparable)) 
+                if (actual.IsEqual(comparable)) 
                     return true;
             }
             return false;
         }
 
 
-        //(Week 2) Exercise 5: Make the Stack, Queue, Set classes implement the iterable interface
+        //(Week 2) ITERATOR -> Exercise 5: Make the Stack, Queue, Set classes implement the iterable interface
 
         public IIterator CreateIterator()
         {

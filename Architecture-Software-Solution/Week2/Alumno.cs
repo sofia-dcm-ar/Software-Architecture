@@ -39,7 +39,7 @@ namespace Week2
         //I had already decided that each IMyComparable teaches itself to print itself, since in Report() I use the generalized ToString() for IMyComparables
         public override string ToString()
         {
-            return base.ToString()+"\nI: "+_fileNumber.ToString()+"\nAverage: "+((float)_average).ToString("F2");
+            return base.ToString()+"\nFile Number: "+_fileNumber.ToString()+"\nAverage: "+((float)_average).ToString("F2");
             //the F2 indicates that I only want two decimals
         }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using Week2.Iterator_Pattern;
 
-namespace Week2
+namespace Week2.MyCollections
 {
     //(Week 1)Exercise 3: Implement interface of a collection of comparable elements.
     public interface IMyCollection :IIterableCollection

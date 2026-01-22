@@ -1,9 +1,7 @@
 ﻿using System;
-using Week2.Iterator_Pattern;
 
-namespace Week2
+namespace Week1.MyCollections
 {
-    //(Week 1) Excercise 8: Create a class Collection that implements IMyCollection by combining a stack and a queue 
     public class MultipleCollection : IMyCollection
     {
         private readonly MyStack _stacked;
@@ -11,10 +9,10 @@ namespace Week2
 
         public MultipleCollection(MyStack stack, MyQueue queue)
         {
-            this._stacked=new MyStack();
-            this._stacked=stack;
-            this._queued=new MyQueue();
-            this._queued=queue;
+            _stacked=new MyStack();
+            _stacked=stack;
+            _queued=new MyQueue();
+            _queued=queue;
         }
 
         //Interface methods implementation
@@ -48,15 +46,9 @@ namespace Week2
 
         public bool Contains(IMyComparable comparable)
         {
-            return this._stacked.Contains(comparable)||this._queued.Contains(comparable);
+            return _stacked.Contains(comparable)||_queued.Contains(comparable);
             // "||" is the logical OR operator, true if one or both are true, false if both are false
 
-        }
-
-        //(Week 2) Exercise 6: I implement the createIterator function because the collectionable interface implements it
-        public IIterator CreateIterator()
-        {
-            return null;
         }
     }
 }

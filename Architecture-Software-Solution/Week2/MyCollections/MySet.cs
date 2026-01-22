@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Week2.Iterator_Pattern;
 
-namespace Week2
+namespace Week2.MyCollections
 {
     //(Week 2) Exercise 3: Implement Set class. It is a collection that stores elements without repetition
     public class MySet : IMyCollection
@@ -59,7 +59,7 @@ namespace Week2
             return false;
         }
 
-        //(Week 2) Exercise 5: Make the Stack, Queue, Set classes implement the iterable interface
+        //(Week 2) ITERATOR -> Exercise 5: Make the Stack, Queue, Set classes implement the iterable interface
         public IIterator CreateIterator()
         {
             return new MySetIterator(this); //returns the concrete iterator 

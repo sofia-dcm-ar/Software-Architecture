@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Week1
+namespace Week1.MyCollections
 {
     //Exercise 3: Implement interface of a collection of comparable elements.
     public interface IMyCollection

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Week2.Iterator_Pattern;
 
-namespace Week2
+namespace Week2.MyCollections
 {
     //(Week 1) Exercise 4.A: Implement Stack class and implement IMyCollection interface
     public class MyStack : IMyCollection
@@ -56,7 +56,7 @@ namespace Week2
 
         public void Add(IMyComparable c)
         {
-            this.Push(c);
+            Push(c);
         }
 
         public bool Contains(IMyComparable c)
@@ -69,7 +69,7 @@ namespace Week2
             return false;
         }
 
-        //(Week 2) Exercise 5: Make the Stack, Queue, Set classes implement the iterable interface
+        //(Week 2) ITERATOR -> Exercise 5: Make the Stack, Queue, Set classes implement the iterable interface
         public IIterator CreateIterator()
         {
             return new MyStackIterator(this); //returns the concrete iterator 
