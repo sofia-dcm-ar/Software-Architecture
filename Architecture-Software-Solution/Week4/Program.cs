@@ -1,40 +1,39 @@
-﻿using System;
-using Week3.FactoryMethod_Pattern;
-using Week3.Iterator_Pattern;
-using Week3.Observer_Pattern;
-using Week3.MyCollections;
+﻿using MetodologíasDeProgramaciónI;
+using Microsoft.VisualBasic.FileIO;
+using System;
+using Week4.Decorator_Pattern;
+using Week4.FactoryMethod_Pattern;
+using Week4.MyCollections;
+using Week4.People;
 
-namespace Week3
+namespace Week4
 {
     class Program
     {
+        // Factories: ( 1 MyNumber ) ( 2 Alumno ) ( 3 Professor ) ( 4 DiligentAlumno ) ( 5 AlumnoBaseDecorator ) ( 6 DiligentAlumnoBaseDecorator )
+
         public static void Main(string[] args)
         {
-            // Factorys: ( 1 MyNumber ) ( 2 Alumno ) ( 3 Professor )
+            //(Week 4) Exercise 4: Implement a main function that instantiates a teacher, makes 20 students arrive with the GoToClass method
+            //The Students are instances of the adapter implemented in the previous exercise.
+            //10 of them will adapt an instance of the Alumno class, while another 10 will adapt DiligentAlumno
 
-            //(Week 3) Exercise 14: Implement the main
-            Professor professor = ((Professor)MyComparableFactory.RandomCreate(3));
-            MyStack stacked = new MyStack();
-            FillCollection(stacked, 2);
+            //(Week 4) Exercise 7: Build the decorated students
 
-            IIterator iterator = stacked.CreateIterator();
-            while (!iterator.IsDone())
+            Teacher teacher = new Teacher();
+            for (int i = 0; i<10; i++)
             {
-                professor.Attach((Alumno)iterator.CurrentItem());
-                iterator.Next();
+                teacher.goToClass(new AlumnoAdapter((AlumnoBaseDecorator)MyComparableFactory.RandomCreate(5)));
+                teacher.goToClass(new AlumnoAdapter((AlumnoBaseDecorator)MyComparableFactory.RandomCreate(6)));
             }
-
-            TeachingClasses(professor);
-
+            teacher.teachingAClass();
 
             Console.Write("Press any key to continue . . . ");
             Console.ReadKey(true);
         }
 
         //-------------------Functions---------------------
-
-        //(Week 3) Exercise 6: Implement a single fill function and a single report function (from class 1)
-        public static void FillCollection(IMyCollection collection, int option)
+        public static void Fill(IMyCollection collection, int option)
         {
             for (int i = 0; i<20; i++)
             {
@@ -54,8 +53,6 @@ namespace Week3
                 Console.WriteLine("The read element is not in the collection");
         }
 
-        //(Week 3) Exercise 13: Implement the function dictadoDeClases, class testing observer pattern
-
         public static void TeachingClasses(Professor professor)
         {
             for (int i = 0; i<2; i++)
@@ -64,6 +61,5 @@ namespace Week3
                 professor.WriteInTheBoard();
             }
         }
-
     }
 }
