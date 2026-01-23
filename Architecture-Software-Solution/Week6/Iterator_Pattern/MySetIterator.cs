@@ -1,0 +1,37 @@
+﻿using System;
+using Week6.MyCollections;
+
+namespace Week6.Iterator_Pattern
+{
+    //(Week 2) Exercise 5: Make Stack, Queue and Set classes implement the iterable interface
+    public class MySetIterator : IIterator
+    {
+        private MySet _set;
+        private int _index;
+        public MySetIterator(MySet c)
+        {
+            _set=c;
+            this.First();
+        }
+
+        public void First()
+        {
+            _index=0;
+        }
+
+        public void Next()
+        {
+            _index++;
+        }
+
+        public bool IsDone()
+        {
+            return (_index>=_set.Count());
+        }
+
+        public IMyComparable CurrentItem()
+        {
+            return (_set.GetElement(_index));
+        }
+    }
+}
